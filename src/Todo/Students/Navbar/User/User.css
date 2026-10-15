@@ -1,0 +1,56 @@
+.User {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.usuario-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*.usuario-container:hover {
+  background-color: #f9fafb;
+}*/
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF7A00 0%, #E6003A 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+}
+
+.User:hover .usuario-container{
+    transform: scale(1.07);
+}
+
+/*.nombre {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.rol {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6b7280;
+}*/

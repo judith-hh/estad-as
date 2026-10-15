@@ -1,0 +1,42 @@
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Logo-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.Logo:hover .Logo-icon {
+  transform: scale(1.05);
+}
+
+.Logo-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.marca {
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ef5522;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #666666;
+  margin-top: 2px;
+  text-transform: uppercase;
+}

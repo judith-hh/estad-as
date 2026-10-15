@@ -1,0 +1,192 @@
+/* =========================================================
+   Formulario de estudiantes (InfoPersonal)
+   Responsivo SIN media queries: todo se adapta solo
+   con auto-fit, clamp() y flex-wrap.
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Tarjeta principal: ocupa todo el ancho hasta 900px */
+.Form-card {
+  background: #ffffff;
+  width: min(100%, 900px);
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: clamp(16px, 4vw, 30px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+/* Encabezado */
+.Form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.Header-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #e0f2fe;
+  color: #ef5522;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.Form-header h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: #000;
+  font-weight: 700;
+}
+
+.Form-header p {
+  margin: 4px 0 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Secciones */
+.Form-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: clamp(12px, 3vw, 20px);
+  margin-bottom: 24px;
+  border: 1px solid #fdfcfb;
+}
+
+.Section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.Section-icon {
+  font-size: 1.1rem;
+}
+
+.Section-title h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ef5522;
+  font-weight: 600;
+}
+
+/* Grilla: 2 columnas si caben, 1 si no (sin media queries) */
+.Form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px 24px;
+}
+
+.Form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.Form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Inputs y selects */
+.Form-group input,
+.Form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e7eaed;
+  border-radius: 6px;
+  font-size: 1rem; /* 16px: evita el zoom automático en iPhone */
+  font-family: inherit;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: border-color 0.2s ease;
+}
+
+.Form-group input:focus,
+.Form-group select:focus {
+  border-color: #ef5522;
+}
+
+.Form-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* Inputs de archivo */
+.File-input {
+  padding: 6px 12px !important;
+  font-size: 0.85rem !important;
+  cursor: pointer;
+}
+
+.File-input::file-selector-button {
+  background-color: #e0f2fe;
+  color: #ef5522;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.File-input::file-selector-button:hover {
+  background-color: #e7eaed;
+}
+
+/* Botones: a la derecha en pantallas grandes,
+   se acomodan solos en pantallas chicas */
+.Form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.Btn-clear,
+.Btn-submit {
+  flex: 0 1 auto;
+  min-width: min(100%, 180px);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Btn-clear {
+  background-color: #ffffff;
+  border: 1px solid #e7eaed;
+  color: #475569;
+}
+
+.Btn-clear:hover {
+  background-color: #fdfcfb;
+}
+
+.Btn-submit {
+  background-color: #ef5522;
+  border: none;
+  color: #ffffff;
+}
+
+.Btn-submit:hover {
+  background-color: #d9471a;
+}

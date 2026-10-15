@@ -1,0 +1,101 @@
+.Navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.Navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Enlaces del Menú */
+.Navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar-links a {
+  text-decoration: none;
+  color: #333333;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+
+/* Botón Destacado Call-to-Action */
+/*.Navbar-btn {
+  background: linear-gradient(135deg, #FF7A00 0%, #E6003A 100%);
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}*/
+
+.Navbar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 58, 0.3);
+}
+
+
+.Navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Navbar-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .Navbar-toggle {
+    display: flex;
+  }
+
+  .Navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 24px 0;
+    gap: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    clip-path: circle(0.0% at 100% 0);
+    transition: clip-path 0.4s ease-in-out;
+  }
+
+  .Navbar-links.active {
+    clip-path: circle(141.4% at 100% 0);
+  }
+}

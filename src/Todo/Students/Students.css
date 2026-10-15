@@ -1,0 +1,20 @@
+.Students-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Students-content {
+  flex: 1;
+  width: 100%;
+  padding: clamp(12px, 4vw, 60px);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Deja que el formulario se encoja en vez de salirse de la pantalla */
+.Students-content>* {
+  min-width: 0;
+}

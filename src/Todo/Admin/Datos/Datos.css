@@ -1,0 +1,301 @@
+/* =========================================================
+   Panel de administración
+   Reutiliza las clases de InfoPersonal.css (Form-card,
+   Form-header, Form-section, Form-group, Btn-submit, Btn-clear...).
+   Importa InfoPersonal.css una vez en tu app (o copia esas clases
+   a un archivo global) para que este archivo funcione.
+   ========================================================= */
+
+/* Doble clase para ganarle a .Form-card (max-width: 900px) sin importar el orden de importación */
+.Form-card.Admin-card {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 30px 40px;
+}
+
+/* ---------- Barra de búsqueda y filtros ---------- */
+.Admin-toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.Toolbar-search {
+  flex: 1;
+}
+
+.Toolbar-filter {
+  width: 200px;
+}
+
+/* ---------- Tabla ---------- */
+.Table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e7eaed;
+  border-radius: 8px;
+}
+
+.Admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.Admin-table th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  background-color: #fdfcfb;
+  border-bottom: 1px solid #e7eaed;
+  white-space: nowrap;
+}
+
+.Admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f3f5;
+  vertical-align: middle;
+}
+
+.Admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.Admin-table tbody tr:hover {
+  background-color: #fdfcfb;
+}
+
+.Cell-name {
+  font-weight: 600;
+}
+
+.Cell-actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.Table-empty {
+  text-align: center;
+  color: #64748b;
+  padding: 32px 14px !important;
+}
+
+/* ---------- Etiquetas de estado ---------- */
+.Badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.Badge-pendiente {
+  background-color: #fff4e5;
+  color: #b45309;
+}
+
+.Badge-aprobado {
+  background-color: #e6f6ec;
+  color: #15803d;
+}
+
+.Badge-rechazado {
+  background-color: #fdecec;
+  color: #b91c1c;
+}
+
+/* ---------- Modal de detalle ---------- */
+
+/* El padding ya no suma al ancho: evita que el modal se salga por la derecha */
+.Admin-card,
+.Admin-card *,
+.Modal-overlay,
+.Modal-overlay * {
+  box-sizing: border-box;
+}
+
+.Modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  z-index: 9999; /* por encima del navbar */
+}
+
+.Modal-card {
+  background-color: #ffffff;
+  width: min(100%, 720px);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.Modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.Modal-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  color: #000;
+}
+
+.Modal-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.Modal-close:hover {
+  color: #ef5522;
+}
+
+.Modal-card .Form-section {
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e7eaed;
+}
+
+/* Datos en pares etiqueta / valor */
+.Detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin: 0;
+}
+
+.Detail-grid dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.Detail-grid dd {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #1e293b;
+}
+
+/* Lista de documentos */
+.Docs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Docs-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1f3f5;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.Docs-list li:last-child {
+  border-bottom: none;
+}
+
+.Doc-link {
+  color: #ef5522;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.Doc-link:hover {
+  text-decoration: underline;
+}
+
+.Doc-missing {
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+/* Botones del modal */
+.Modal-actions {
+  margin-top: 20px;
+}
+
+.Modal-actions .Btn-danger {
+  margin-right: auto;
+}
+
+.Btn-danger {
+  background-color: #ffffff;
+  border: 1px solid #f3c1c1;
+  color: #b91c1c;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Btn-danger:hover {
+  background-color: #fdecec;
+}
+
+/* Foco visible para teclado */
+.Admin-card button:focus-visible,
+.Admin-card a:focus-visible,
+.Modal-card button:focus-visible {
+  outline: 2px solid #ef5522;
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .Form-card.Admin-card {
+    padding: 24px 20px;
+  }
+
+  .Admin-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .Form-card.Admin-card {
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .Admin-toolbar {
+    flex-direction: column;
+  }
+
+  .Toolbar-filter {
+    width: 100%;
+  }
+
+  .Detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Modal-card {
+    padding: 20px;
+  }
+}
